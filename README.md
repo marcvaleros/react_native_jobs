@@ -8,6 +8,11 @@ Use [`expo-router`](https://expo.github.io/router) to build native navigation us
 npx create-expo-app -e with-router
 ```
 
+```
+//start the expo cli in android
+expo-cli start --tunnel 
+```
+
 ## 📝 Notes
 
 - [Expo Router: Docs](https://expo.github.io/router)
