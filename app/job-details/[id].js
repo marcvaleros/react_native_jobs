@@ -17,7 +17,13 @@ const JobDetails = () => {
   
 
   const { data, isLoading, error, refetch} = useFetch('job-details',{ job_id: params.id })
-  const onRefresh = () => {};
+  const onRefresh = useCallback(() => {
+      setRefreshing(true);
+      refetch();
+      setRefreshing(false);
+  },[])
+
+
   const displayTabContent = () => {
     switch (activeTab) {
       case 'About':
@@ -91,10 +97,12 @@ const JobDetails = () => {
                 />
 
                 { displayTabContent()}
-              </View>
 
+              </View>
             )}
           </ScrollView>
+
+          <JobFooter url={data[0]?.job_google_link ?? 'https://careers.google.com/jobs/results/'} />
       </>
     </SafeAreaView>
   )
