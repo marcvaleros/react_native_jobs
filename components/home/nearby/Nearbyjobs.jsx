@@ -7,8 +7,7 @@ import useFetch from '../../../hook/useFetch'
 
 const NearbyJobs = () => {
   const router = useRouter();
-  const {data, isLoading, error} = useFetch
-  ('search', {
+  const {data, isLoading, error} = useFetch('search', {
     query: 'React Developer',
     num_pages: "1"
   });
