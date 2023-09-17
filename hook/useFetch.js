@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-
-
 const useFetch = (endpoint, query) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false); 
@@ -12,13 +10,10 @@ const useFetch = (endpoint, query) => {
     method: 'GET',
     url: `https://jsearch.p.rapidapi.com/${endpoint}`,
     headers: {
-      'X-RapidAPI-Key': 'df7d705517msh0baf179aab76266p15e4c8jsned8bf099735d',
+      'X-RapidAPI-Key': '8beb92a1bfmsh374ab7ab009abb3p118d42jsnda1b8df72418',
       'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
     },
     params: { ...query },
-    // query: 'Python developer in Texas, USA',
-    // page: '1',
-    // num_pages: '1'
   };
 
 
